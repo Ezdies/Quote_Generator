@@ -3,7 +3,7 @@ package App;
 import java.util.ArrayList;
 
 public class Deserializer {
-    private String id;
+    private String _id;
     private ArrayList<String> tags;
     private String content;
     private String author;
@@ -12,7 +12,7 @@ public class Deserializer {
     private String dateModified;
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public ArrayList<String> getTags() {
@@ -39,13 +39,24 @@ public class Deserializer {
         return dateModified;
     }
 
-    public static void printObjectInfo(Deserializer object){
-        System.out.println(object.getId());
-        System.out.println(object.getTags());
-        System.out.println(object.getContent());
-        System.out.println(object.getAuthor());
-        System.out.println(object.getLength());
-        System.out.println(object.getDateAdded());
-        System.out.println(object.getDateModified());
+    public static void printObjectInfo(Deserializer object) {
+        System.out.println(object._id);
+        System.out.println(object.tags);
+        System.out.println(object.content);
+        System.out.println(object.author);
+        System.out.println(object.length);
+        System.out.println(object.dateAdded);
+        System.out.println(object.dateModified);
+    }
+
+
+    public static String stringify(Deserializer object) {
+        return object._id + "\n" +
+                object.tags + "\n" +
+                object.content + "\n" +
+                object.author + "\n" +
+                object.length + "\n" +
+                object.dateAdded + "\n" +
+                object.dateModified + "\n";
     }
 }

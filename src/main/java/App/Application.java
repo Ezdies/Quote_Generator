@@ -9,11 +9,14 @@ import java.net.URL;
 import static spark.Spark.*;
 
 public class Application {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
-        URL url = new URL("https://api.quotable.io/random");
-        InputStreamReader reader = new InputStreamReader(url.openStream());
-        Deserializer object = new Gson().fromJson(reader, Deserializer.class);
-        Deserializer.printObjectInfo(object);
+        get("/quote", (request, response) -> {
+            URL url = new URL("https://api.quotable.io/random");
+            InputStreamReader reader = new InputStreamReader(url.openStream());
+            Deserializer object = new Gson().fromJson(reader, Deserializer.class);
+            Deserializer.printObjectInfo(object);
+            return Deserializer.stringify(object);
+        });
     }
 }
