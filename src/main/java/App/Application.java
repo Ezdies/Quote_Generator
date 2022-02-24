@@ -14,7 +14,7 @@ import static spark.Spark.*;
 public class Application {
     public static void main(String[] args) {
 
-        get("/thymeleaf", (request, response) -> {
+        get("/quote", (request, response) -> {
             URL url = new URL("https://api.quotable.io/random");
             InputStreamReader reader = new InputStreamReader(url.openStream());
             Deserializer quote = new Gson().fromJson(reader, Deserializer.class);

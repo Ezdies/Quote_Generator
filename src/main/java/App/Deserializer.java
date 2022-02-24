@@ -48,15 +48,4 @@ public class Deserializer {
         System.out.println(object.dateAdded);
         System.out.println(object.dateModified);
     }
-
-
-    public static String stringify(Deserializer object) {
-        return object._id + "\n" +
-                object.tags + "\n" +
-                object.content + "\n" +
-                object.author + "\n" +
-                object.length + "\n" +
-                object.dateAdded + "\n" +
-                object.dateModified + "\n";
-    }
 }
