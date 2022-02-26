@@ -2,7 +2,7 @@ package App;
 
 import java.util.ArrayList;
 
-public class Deserializer {
+public class QuoteDecrypter {
     private String _id;
     private ArrayList<String> tags;
     private String content;
@@ -39,7 +39,7 @@ public class Deserializer {
         return dateModified;
     }
 
-    public static void printObjectInfo(Deserializer object) {
+    public static void printObjectInfo(QuoteDecrypter object) {
         System.out.println(object._id);
         System.out.println(object.tags);
         System.out.println(object.content);
